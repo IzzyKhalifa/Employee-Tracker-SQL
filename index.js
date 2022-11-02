@@ -1,7 +1,8 @@
 const { connection } = require("./db/connection");
 const inquirer = require("inquirer");
+const cTable = require("console.table");
 
-function employeeView() {
+function init() {
     inquirer
       .prompt({
         name: "action",
@@ -47,3 +48,43 @@ function employeeView() {
             break;
         }
       });
+      function departmentsView() {
+        setTimeout(() => {
+          let query = "SELECT * FROM department";
+          connection.query(query, function (err, res) {
+            if (err) throw err;
+            {
+              console.table(res);
+            }
+            init();
+          });
+        }, 1000);
+      }
+      function rolesView() {
+        setTimeout(() => {
+            let query = "SELECT * FROM role";
+            connection.query(query , function(err, res){
+                if(err) throw err;
+                {
+                    console.table(res);
+                }
+                init();
+            });
+        }, 1000);
+      }
+      function employeesView() {
+        setTimeout(() => {
+            let query = "SELECT * FROM employees";
+            connection.query(query , function(err, res){
+                if(err) throw err;
+                {
+                    console.table(res);
+                }
+                init();
+            });
+        }, 1000);
+      }
+      
+    }
+
+    
