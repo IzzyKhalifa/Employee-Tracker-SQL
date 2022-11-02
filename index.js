@@ -62,7 +62,7 @@ function init() {
       }
       function rolesView() {
         setTimeout(() => {
-            let query = "SELECT * FROM role";
+            let query = "SELECT * FROM roles";
             connection.query(query , function(err, res){
                 if(err) throw err;
                 {
@@ -84,7 +84,44 @@ function init() {
             });
         }, 1000);
       }
-      
-    }
+      function addDepartment() {
+        connection.query(`SELECT * FROM department`, (err, res) => {
+          if (err) throw err;
+          console.table(res);
+        });
+        setTimeout(() => {
+          inquirer
+            .prompt([
+              {
+                name: "departmentName",
+                type: "input",
+                message: "What is the department name?",
+              },
+            ])
+            .then((answer) => {
+              connection.query(
+                "INSERT INTO department SET ?",
+                {
+                  name: answer.departmentName,
+                },
+                function (err) {
+                  if (err) {
+                    throw err;
+                  } else {
+                    let query = "SELECT * FROM department";
+                    connection.query(query, function (err, res) {
+                      if (err) throw err;
+                      {
+                        console.table(res);
+                      }
+                      runEmployeeView();
+                    });
+                  }
+                }
+              );
+            });
+        }, 1000);
+      }
 
+    }
     
