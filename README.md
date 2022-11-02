@@ -18,7 +18,7 @@ SO THAT I can organize and plan my business
 
 The following video shows an example of the application being used from the command line:
 
-https://drive.google.com/file/d/1BCWsMk9F469MR8dyWZAhIR6nwbxHSlGZ/view
+https://drive.google.com/file/d/1PySaf49qbbJ1Qb_lYGUXqiCAs9EuY2Ch/view
 
 ---
 © 2022 Trilogy Education Services, LLC, a 2U, Inc. brand. Confidential and Proprietary. All Rights Reserved.

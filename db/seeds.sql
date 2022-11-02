@@ -36,17 +36,17 @@ values('Engineer',  60000, 2);
 
 -- Finance Department
 insert INTO roles (title, salary, department_id)
-values('Finance Manager', 70000, 2);
+values('Finance Manager', 70000, 3);
 
 insert INTO roles(title, salary, department_id)
-values('Finance Person',  40000, 2);
+values('Finance Person',  40000, 3);
 
 
 insert INTO roles (title, salary, department_id)
-values('Service Manager', 80000, 2);
+values('Service Manager', 80000, 4);
 
 insert INTO roles(title, salary, department_id)
-values('Service Person',  40000, 2);
+values('Service Person',  40000, 4);
 
 insert INTO employee (first_name, last_name, role_id, manager_id)
 values('Sam', 'Johnson', 1, NULL);
